@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
+import csv
 LARGE_MAIN_FONT= ("Courier", 40, "bold")
 LARGE_FONT= ("Courier", 40)
 BUTTON_FONT= ("Arial", 20, "bold")
@@ -100,7 +101,7 @@ class PageOne(tk.Frame):
 
         f = Scale(self, variable = varf, orient=HORIZONTAL, length=275, to=275, command=print_valuef, background='white')
         f.pack()
-
+        
        
 
 
@@ -127,12 +128,40 @@ class PageTwo(tk.Frame):
             print("e=" + vare1)
             varf1=str(varf.get())
             print("f=" + varf1)
+            step=w.get()
+            f = open('data.csv', 'a', newline="")
+            with f:
+    
+                writer = csv.writer(f, delimiter=',')
+                writer.writerow([step, vara1, varb1, varc1, vard1, vare1, varf1]) 
         vara = DoubleVar()
         varb = DoubleVar()
         varc = DoubleVar()
         vard = DoubleVar()
         vare = DoubleVar()
         varf = DoubleVar()
+        
+        def read():
+            with open('data.csv') as csvfile:
+                readCSV = csv.reader(csvfile, delimiter=',')
+
+                for row in readCSV:
+                    step = row[0]
+                    a = row[1]
+                    b = row[2]
+                    c = row[3]
+                    d = row[4]
+                    e = row[5]
+                    f = row[6]
+                    print("step" + step + "\n" +
+                          "a= " + a +"\n" +
+                          "b= " + b +"\n" +
+                          "c= " + c +"\n" +
+                          "d= " + d +"\n" +
+                          "e= " + e +"\n" +
+                          "f= " + f +"\n")  
+        w = Spinbox(self, from_=0, to=999)
+        w.pack()
         
         a = Scale(self, variable = vara, orient=HORIZONTAL, length=275, to=275, background='orange')
         a.pack()
@@ -155,6 +184,9 @@ class PageTwo(tk.Frame):
         button2 = tk.Button(self, text="Save", font=BUTTON_FONT,
                             command=save)
         button2.pack()
+        button3 = tk.Button(self, text="Read", font=BUTTON_FONT,
+                            command=read)
+        button3.pack()
         
 
 
