@@ -67,16 +67,82 @@ class PageOne(tk.Frame):
         button1.pack()
         def print_valuea(vara):
             print("a="+vara)
+            vara2=a.get()
+            varb2=b.get()
+            varc2=c.get()
+            vard2=d.get()
+            vare2=e.get()
+            varf2=fa.get()
+            f = open('online.csv', 'w', newline="")
+            with f:
+    
+                writer = csv.writer(f, delimiter=',')
+                writer.writerow([vara2, varb2, varc2, vard2, vare2, varf2])
         def print_valueb(varb):
             print("b="+varb)
+            vara2=a.get()
+            varb2=b.get()
+            varc2=c.get()
+            vard2=d.get()
+            vare2=e.get()
+            varf2=fa.get()
+            f = open('online.csv', 'w', newline="")
+            with f:
+    
+                writer = csv.writer(f, delimiter=',')
+                writer.writerow([vara2, varb2, varc2, vard2, vare2, varf2])
         def print_valuec(varc):
             print("c="+varc)
+            vara2=a.get()
+            varb2=b.get()
+            varc2=c.get()
+            vard2=d.get()
+            vare2=e.get()
+            varf2=fa.get()
+            f = open('online.csv', 'w', newline="")
+            with f:
+    
+                writer = csv.writer(f, delimiter=',')
+                writer.writerow([vara2, varb2, varc2, vard2, vare2, varf2])
         def print_valued(vard):
             print("d="+vard)
+            vara2=a.get()
+            varb2=b.get()
+            varc2=c.get()
+            vard2=d.get()
+            vare2=e.get()
+            varf2=fa.get()
+            f = open('online.csv', 'w', newline="")
+            with f:
+    
+                writer = csv.writer(f, delimiter=',')
+                writer.writerow([vara2, varb2, varc2, vard2, vare2, varf2])
         def print_valuee(vare):
             print("e="+vare)
+            vara2=a.get()
+            varb2=b.get()
+            varc2=c.get()
+            vard2=d.get()
+            vare2=e.get()
+            varf2=fa.get()
+            f = open('online.csv', 'w', newline="")
+            with f:
+    
+                writer = csv.writer(f, delimiter=',')
+                writer.writerow([vara2, varb2, varc2, vard2, vare2, varf2])
         def print_valuef(varf):
             print("f="+varf)
+            vara2=a.get()
+            varb2=b.get()
+            varc2=c.get()
+            vard2=d.get()
+            vare2=e.get()
+            varf2=fa.get()
+            f = open('online.csv', 'w', newline="")
+            with f:
+    
+                writer = csv.writer(f, delimiter=',')
+                writer.writerow([vara2, varb2, varc2, vard2, vare2, varf2])
         vara = DoubleVar()
         varb = DoubleVar()
         varc = DoubleVar()
@@ -99,8 +165,8 @@ class PageOne(tk.Frame):
         e = Scale(self, variable = vare, orient=HORIZONTAL, length=275, to=275, command=print_valuee, background='green')
         e.pack()
 
-        f = Scale(self, variable = varf, orient=HORIZONTAL, length=275, to=275, command=print_valuef, background='white')
-        f.pack()
+        fa = Scale(self, variable = varf, orient=HORIZONTAL, length=275, to=275, command=print_valuef, background='white')
+        fa.pack()
         
        
 
@@ -131,6 +197,7 @@ class PageTwo(tk.Frame):
             step=w.get()
             f = open('data.csv', 'a', newline="")
             with f:
+                
     
                 writer = csv.writer(f, delimiter=',')
                 writer.writerow([step, vara1, varb1, varc1, vard1, vare1, varf1]) 
